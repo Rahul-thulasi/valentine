@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0010" />
+  <meta name="description" content="Devu & Ponnu — A love story told through six songs, memories, and one personal voice note." />
+  <title>Devu & Ponnu — Forever Yours ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SPLASH SCREEN
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="splash-screen">
+    <canvas id="splash-stars-canvas"></canvas>
+
+    <div class="moon"></div>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <div class="splash-content">
+      <div class="glow-heart">
+        <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="heartGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ff85a1" />
+              <stop offset="60%" stop-color="#e0144c" />
+              <stop offset="100%" stop-color="#8b0024" />
+            </radialGradient>
+            <filter id="heartGlow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 10 50 18 C56 10 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+            fill="url(#heartGrad)"
+            filter="url(#heartGlow)"
+          />
+        </svg>
+      </div>
+
+      <p class="splash-quote reveal-on-scroll">
+        Somewhere between two places, two hearts found each other.
+      </p>
+      <p class="splash-subtitle reveal-on-scroll">
+        A love story made just for you.
+      </p>
+
+      <div class="splash-name-wrapper">
+        <span id="splash-name"></span>
+      </div>
+
+      <button id="enter-btn" aria-label="Enter our world">
+        <span class="enter-btn-text">ENTER OUR WORLD</span>
+        <svg class="enter-heart-icon" viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 21.3C12 21.3 1 13.7 1 6.3C1 3.4 3.4 1 6.3 1C8.7 1 10.8 2.4 12 4.5C13.2 2.4 15.3 1 17.7 1C20.6 1 23 3.4 23 6.3C23 13.7 12 21.3 12 21.3Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="splash-overlay"></div>
+    <div class="petal-container" aria-hidden="true">
+      <div class="petal petal-1"></div>
+      <div class="petal petal-2"></div>
+      <div class="petal petal-3"></div>
+      <div class="petal petal-4"></div>
+      <div class="petal petal-5"></div>
+      <div class="petal petal-6"></div>
+      <div class="petal petal-7"></div>
+      <div class="petal petal-8"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT (hidden until enter button clicked)
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="main-content" class="hidden">
+
+    <!-- ─────────────────────────────────────────────────────────
+         (a) OUR LOVE STORY & SONGS
+    ───────────────────────────────────────────────────────── -->
+    <section id="album-section" class="scroll-section" data-section="album">
+      <div class="section-inner">
+        <div class="album-header reveal-on-scroll">
+          <p class="album-label">Devu & Ponnu</p>
+          <h1 class="album-main-title">OUR FOREVER</h1>
+          <h2 class="section-heading">Songs Until We Meet</h2>
+          <p class="section-subtitle album-tagline">
+            Six songs. Countless feelings. One love story.
+          </p>
+        </div>
+
+        <div class="album-body">
+          <div class="album-art-wrapper reveal-on-scroll">
+            <div class="album-art-glow"></div>
+            <img
+              id="album-art-display"
+              src=""
+              alt="Our Story Cover"
+              class="album-art-img"
+            />
+          </div>
+
+          <div class="track-list-wrapper reveal-on-scroll">
+            <div id="track-list" role="list">
+
+              <!-- Track 01 -->
+              <div class="track-item" data-track-index="0" role="listitem" tabindex="0" aria-label="Track 1">
+                <span class="track-number">01</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 1">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Track 02 -->
+              <div class="track-item" data-track-index="1" role="listitem" tabindex="0" aria-label="Track 2">
+                <span class="track-number">02</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 2">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Track 03 -->
+              <div class="track-item" data-track-index="2" role="listitem" tabindex="0" aria-label="Track 3">
+                <span class="track-number">03</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 3">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Track 04 -->
+              <div class="track-item" data-track-index="3" role="listitem" tabindex="0" aria-label="Track 4">
+                <span class="track-number">04</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 4">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Track 05 -->
+              <div class="track-item" data-track-index="4" role="listitem" tabindex="0" aria-label="Track 5">
+                <span class="track-number">05</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 5">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Track 06 -->
+              <div class="track-item" data-track-index="5" role="listitem" tabindex="0" aria-label="Track 6">
+                <span class="track-number">06</span>
+                <span class="track-language">–</span>
+                <div class="track-info">
+                  <span class="track-title">–</span>
+                  <span class="track-artist">–</span>
+                </div>
+                <span class="track-duration">–:––</span>
+                <button class="track-play-icon" aria-label="Play track 6">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor" />
+                  </svg>
+                </button>
+              </div>
+
+            </div><!-- /#track-list -->
+          </div>
+        </div><!-- /.album-body -->
+      </div><!-- /.section-inner -->
+    </section>
+
+    <!-- ── ROMANTIC INTERLUDE 1 ── -->
+    <div class="romantic-interlude reveal-on-scroll">
+      <div class="interlude-line"></div>
+      <span class="interlude-sparkle">✦</span>
+      <blockquote class="interlude-quote">
+        “Distance is just a test to see how far love can travel.”
+      </blockquote>
+      <div class="interlude-author">Dedicated to Devu ❤️</div>
+      <div class="interlude-line"></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (b) HER PHOTO SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="her-photo-section" class="scroll-section" data-section="her-photo">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">My Favourite Person ❤️</h2>
+          <p class="section-subtitle">Every picture has something special about you.</p>
+        </div>
+
+        <div class="photo-glow-wrapper reveal-on-scroll">
+          <div class="photo-glow-ring"></div>
+          <div id="her-photo-frame" class="photo-frame">
+            <img
+              id="her-photo-img"
+              src=""
+              alt="My Favourite Person"
+              class="photo-img"
+            />
+            <div class="photo-placeholder">
+              <span>[ Her Photo ]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROMANTIC INTERLUDE 2 ── -->
+    <div class="romantic-interlude reveal-on-scroll">
+      <div class="interlude-line"></div>
+      <span class="interlude-sparkle">✦</span>
+      <blockquote class="interlude-quote">
+        “In a room full of art, I would still stare at you.”
+      </blockquote>
+      <div class="interlude-author">Every glimpse of you is poetry</div>
+      <div class="interlude-line"></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (c) HER EYES SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="her-eyes-section" class="scroll-section" data-section="her-eyes">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">Your Eyes, My Favourite View</h2>
+        </div>
+
+        <div class="photo-glow-wrapper reveal-on-scroll">
+          <div id="her-eyes-frame" class="photo-frame">
+            <img
+              id="her-eyes-img"
+              src=""
+              alt="Your Eyes"
+              class="photo-img"
+            />
+            <div class="photo-placeholder">
+              <span>[ Her Eyes Photo ]</span>
+            </div>
+          </div>
+        </div>
+
+        <p id="her-eyes-message" class="section-message reveal-on-scroll"></p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (d) GROUP PHOTO SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="group-photo-section" class="scroll-section" data-section="group-photo">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">A Little Piece of Our World</h2>
+        </div>
+
+        <div class="photo-glow-wrapper reveal-on-scroll">
+          <div id="group-photo-frame" class="photo-frame polaroid">
+            <img
+              id="group-photo-img"
+              src=""
+              alt="A Little Piece of Our World"
+              class="photo-img"
+            />
+            <div class="photo-placeholder">
+              <span>[ Group Photo ]</span>
+            </div>
+            <div class="polaroid-caption">a little piece of our world</div>
+          </div>
+        </div>
+
+        <p id="group-photo-message" class="section-message reveal-on-scroll"></p>
+      </div>
+    </section>
+
+    <!-- ── ROMANTIC INTERLUDE 3 ── -->
+    <div class="romantic-interlude reveal-on-scroll">
+      <div class="interlude-line"></div>
+      <span class="interlude-sparkle">✦</span>
+      <blockquote class="interlude-quote">
+        “We fall asleep under the very same moon, wishing we were waking up in the same arms.”
+      </blockquote>
+      <div class="interlude-author">Ponnu & Devu</div>
+      <div class="interlude-line"></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (e) BOTH EYES SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="both-eyes-section" class="scroll-section" data-section="both-eyes">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">Two Eyes, One Beautiful Story</h2>
+        </div>
+
+        <div class="photo-glow-wrapper reveal-on-scroll">
+          <div id="both-eyes-frame" class="photo-frame">
+            <img
+              id="both-eyes-img"
+              src=""
+              alt="Two Eyes, One Beautiful Story"
+              class="photo-img"
+            />
+            <div class="photo-placeholder">
+              <span>[ Both Eyes Photo ]</span>
+            </div>
+            <div class="connecting-particles" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <p id="both-eyes-message" class="section-message reveal-on-scroll"></p>
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (f) MISS ME SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="miss-me-section" class="scroll-section" data-section="miss-me">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">When You Miss Me...</h2>
+          <p class="section-subtitle">Whenever distance feels difficult, come here.</p>
+        </div>
+
+        <div id="miss-options" class="reveal-on-scroll" role="group" aria-label="When you miss me options">
+          <button class="miss-option-btn" data-option="0" aria-label="Miss me option 1">–</button>
+          <button class="miss-option-btn" data-option="1" aria-label="Miss me option 2">–</button>
+          <button class="miss-option-btn" data-option="2" aria-label="Miss me option 3">–</button>
+          <button class="miss-option-btn" data-option="3" aria-label="Miss me option 4">–</button>
+        </div>
+
+        <div id="miss-display" class="reveal-on-scroll" aria-live="polite" aria-atomic="true">
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROMANTIC INTERLUDE 4 ── -->
+    <div class="romantic-interlude reveal-on-scroll">
+      <div class="interlude-line"></div>
+      <span class="interlude-sparkle">✦</span>
+      <blockquote class="interlude-quote">
+        “I don't care how many miles keep us apart. Every single sunset brings me one day closer to you.”
+      </blockquote>
+      <div class="interlude-author">Until that day comes ❤️</div>
+      <div class="interlude-line"></div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (g) MEETING SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="meeting-section" class="scroll-section" data-section="meeting">
+      <div class="section-inner">
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-heading">Our First Meeting — A Dream We Share</h2>
+          <p class="section-subtitle">One day, these won't just be dreams.</p>
+        </div>
+
+        <div id="dream-scenes-container" class="reveal-on-scroll" role="list">
+
+          <div class="dream-scene-card" role="listitem">
+            <div class="dream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dream-title">The Airport</h3>
+            <p class="dream-desc">Walking through arrivals and finally seeing you standing there, real and breathing, no more screens between us.</p>
+          </div>
+
+          <div class="dream-scene-card" role="listitem">
+            <div class="dream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dream-title">The First Hug</h3>
+            <p class="dream-desc">That first hug will hold every goodnight, every missed moment, every wish that we were closer.</p>
+          </div>
+
+          <div class="dream-scene-card" role="listitem">
+            <div class="dream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dream-title">A Quiet Meal Together</h3>
+            <p class="dream-desc">Sitting across from each other at a table, no calls, no lag, just us sharing food and laughing about everything.</p>
+          </div>
+
+          <div class="dream-scene-card" role="listitem">
+            <div class="dream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm-.5-11H13v6l4.75 2.85-.75 1.23-5.5-3.33V8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dream-title">A Walk at Sunset</h3>
+            <p class="dream-desc">Walking side by side while the sky turns gold — no rushing, no goodbyes looming, just this moment.</p>
+          </div>
+
+          <div class="dream-scene-card" role="listitem">
+            <div class="dream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="dream-title">Falling Asleep Safe</h3>
+            <p class="dream-desc">The night when we don't have to hang up — when I can just stay, and you can just be there, and the world can wait.</p>
+          </div>
+
+        </div><!-- /#dream-scenes-container -->
+
+        <div class="dream-lines reveal-on-scroll">
+          <p class="dream-line">I keep imagining the day when I won't have to say goodnight through a screen.</p>
+          <p class="dream-line">The day when I can finally see your smile in front of me.</p>
+          <p class="dream-line">The day when I can hold your hand instead of wishing I could.</p>
+          <p class="dream-line">Until then, let's keep believing in that day.</p>
+          <p id="distance-memory-line" class="dream-line dream-line-final">One day, distance will become a memory.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────────────────
+         (h) FINAL SECTION
+    ───────────────────────────────────────────────────────── -->
+    <section id="final-section" class="scroll-section" data-section="final">
+      <canvas id="final-stars-canvas" aria-hidden="true"></canvas>
+
+      <div class="final-inner">
+
+        <h2 id="final-heading" class="section-heading reveal-on-scroll">
+          To My Devu — A Message From My Heart ❤️
+        </h2>
+
+        <div id="final-track-list" class="reveal-on-scroll" aria-label="Our songs">
+        </div>
+
+        <div id="final-photo-frame" class="photo-frame reveal-on-scroll">
+          <img
+            id="final-her-photo"
+            src=""
+            alt="My Favourite Person"
+            class="photo-img"
+          />
+        </div>
+
+        <div id="voice-player-wrapper" class="reveal-on-scroll" aria-label="Voice message player">
+          <p class="voice-player-label"></p>
+          <div class="voice-controls">
+            <button id="voice-play-btn" aria-label="Play voice message">
+              <svg class="icon-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <polygon points="5,3 19,12 5,21" fill="currentColor" />
+              </svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+                <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+                <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+              </svg>
+            </button>
+            <div id="voice-progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="voice-progress-fill"></div>
+            </div>
+            <span id="voice-time">0:00</span>
+          </div>
+        </div>
+
+        <div id="final-message-lines" class="reveal-on-scroll" aria-label="Final message">
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+          <p class="final-line"></p>
+        </div>
+
+        <div class="final-closer reveal-on-scroll">
+          <p id="final-forever-text">ALWAYS & FOREVER</p>
+          <p id="final-tagline-end">Until the day we finally meet.</p>
+        </div>
+
+        <!-- ── VALENTINE'S DAY SPECIAL CLIMAX GIFT ── -->
+        <div id="valentine-gift-section" class="reveal-on-scroll">
+          <div class="gift-heart-badge">💝 A Special Valentine's Gift For You</div>
+          <h2 class="gift-heading">Happy Valentine's Day, Baby ❤️</h2>
+          <p class="gift-subheading">I have one more little secret kept just for you...</p>
+
+          <div class="wax-envelope-wrapper">
+            <div id="wax-envelope" class="wax-envelope" role="button" tabindex="0" aria-label="Open your Valentine's love letter">
+              <div class="envelope-top-flap"></div>
+              <div class="envelope-seal" id="envelope-seal">
+                <span class="seal-heart">💌</span>
+                <span class="seal-label">Tap to Open</span>
+              </div>
+            </div>
+
+            <div id="valentine-letter-modal" class="valentine-letter-modal" style="display:none;">
+              <div class="letter-card">
+                <button id="letter-close-btn" class="letter-close-btn" aria-label="Close letter">✕</button>
+                <div class="letter-header-decor">✨ 💖 ✨</div>
+                <h3 class="letter-salutation">My Dearest Devu, My Baby ❤️</h3>
+                <p class="letter-para">
+                  Happy First Valentine's Day! Even though miles lie between us today, there is not a single inch of distance in my heart.
+                </p>
+                <p class="letter-para">
+                  You have become my favorite smile, my favorite voice to fall asleep to, and my most cherished daydream. Thank you for loving me, for believing in us, and for making every single day brighter just by being you.
+                </p>
+                <p class="letter-para">
+                  I promise you that soon, we won't be looking at pictures on a phone. I will look straight into your eyes, hold your hand tight, and wrap my arms around you so you know you're finally home.
+                </p>
+
+                <!-- Our Special Extra Moments (Unrepeated photos) -->
+                <div class="letter-photo-strip">
+                  <div class="strip-item">
+                    <img src="assets/photos/sweet-selfie.jpg" alt="Our sweet smiles together" />
+                    <span>Always smiling with you</span>
+                  </div>
+                  <div class="strip-item">
+                    <img src="assets/photos/retro-memory.jpg" alt="Our retro moment" />
+                    <span>Written in the stars</span>
+                  </div>
+                </div>
+
+                <div class="letter-footer">
+                  <p class="letter-signature-intro">Forever choosing you,</p>
+                  <p class="letter-signature-name">Ponnu ❤️</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="replay-final-btn" aria-label="Replay final section">
+          Replay Our Story ↺
+        </button>
+
+      </div><!-- /.final-inner -->
+    </section>
+
+  </div><!-- /#main-content -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MUSIC PLAYER — fixed bottom bar
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="music-player" role="region" aria-label="Music player" style="display:none;">
+
+    <!-- Left: artwork + info -->
+    <div class="player-left">
+      <div class="player-artwork-wrapper">
+        <img id="player-artwork" src="" alt="Now playing artwork" />
+        <div class="player-artwork-placeholder" aria-hidden="true">♪</div>
+      </div>
+      <div class="player-song-info">
+        <span id="player-song-name" aria-live="polite">–</span>
+        <span id="player-artist" aria-live="polite">–</span>
+      </div>
+    </div>
+
+    <!-- Center: controls + progress + visualizer -->
+    <div class="player-center">
+      <canvas id="visualizer-canvas" aria-hidden="true"></canvas>
+
+      <div class="player-controls" role="group" aria-label="Playback controls">
+        <button id="shuffle-btn" class="player-ctrl-btn" aria-label="Shuffle" aria-pressed="false">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <button id="prev-btn" class="player-ctrl-btn" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <button id="play-pause-btn" class="player-play-btn" aria-label="Play" aria-pressed="false">
+          <svg class="icon-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="5,3 19,12 5,21" fill="currentColor" />
+          </svg>
+          <svg class="icon-pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+            <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+            <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+          </svg>
+        </button>
+
+        <button id="next-btn" class="player-ctrl-btn" aria-label="Next track">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <button id="repeat-btn" class="player-ctrl-btn" aria-label="Repeat" aria-pressed="false">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="player-progress-row">
+        <span id="current-time" aria-label="Current time">0:00</span>
+        <div id="progress-container" role="slider" aria-label="Seek bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div id="progress-fill"></div>
+          <div class="progress-thumb" aria-hidden="true"></div>
+        </div>
+        <span id="total-time" aria-label="Total time">0:00</span>
+      </div>
+    </div>
+
+    <!-- Right: volume -->
+    <div class="player-right">
+      <button id="mute-btn" class="player-ctrl-btn" aria-label="Mute" aria-pressed="false">
+        <svg class="icon-volume" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+        </svg>
+        <svg class="icon-muted" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" fill="currentColor"/>
+        </svg>
+      </button>
+      <input
+        id="volume-slider"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.8"
+        aria-label="Volume"
+      />
+    </div>
+
+  </div><!-- /#music-player -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CHAPTER OVERLAY
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="chapter-overlay" role="dialog" aria-modal="true" aria-labelledby="chapter-title" style="display:none;">
+    <button id="chapter-close" aria-label="Close chapter">✕</button>
+    <div class="chapter-overlay-particles" aria-hidden="true"></div>
+    <div class="chapter-overlay-content">
+      <p id="chapter-number"></p>
+      <h2 id="chapter-title"></h2>
+      <p id="chapter-message"></p>
+      <button class="chapter-listen-btn" id="chapter-listen-btn" aria-label="Listen now">
+        Listen to This Song 🎵
+      </button>
+    </div>
+  </div>
+
+  <!-- Hidden audio elements -->
+  <audio id="audio-element" preload="metadata" aria-hidden="true"></audio>
+  <audio id="voice-audio-element" preload="metadata" aria-hidden="true"></audio>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
